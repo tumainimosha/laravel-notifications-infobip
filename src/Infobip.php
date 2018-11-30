@@ -13,7 +13,8 @@ class Infobip
     public function __construct()
     {
         $auth = new AuthConfig(
-            config('services.infobip.username'), config('services.infobip.password')
+            config('services.infobip.username'),
+            config('services.infobip.password')
         );
 
         $this->client = new Sms($auth);

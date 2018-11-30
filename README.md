@@ -1,5 +1,9 @@
 # Infobip Notifications Channel for Laravel 5.5+
 
+[![Latest Stable Version](https://poser.pugx.org/princeton255/laravel-notifications-infobip/v/stable)](https://packagist.org/packages/princeton255/laravel-notifications-infobip)
+[![License](https://poser.pugx.org/princeton255/laravel-notifications-infobip/license)](https://packagist.org/packages/princeton255/laravel-notifications-infobip)
+[![Total Downloads](https://poser.pugx.org/princeton255/laravel-notifications-infobip/downloads)](https://packagist.org/packages/princeton255/laravel-notifications-infobip)
+
 This package makes it easy to send Sms notifications using [Infobip service](https://dev.infobip.com/) with Laravel 5.5 and above.
 
 ## Contents
@@ -89,3 +93,4 @@ If you discover any security related issues, please email princeton.mosha@gmail.
 
 ## License
 The MIT License (MIT).
+json {"repository":{"url":"https://github.com/princeton255/laravel-notifications-infobip"}}

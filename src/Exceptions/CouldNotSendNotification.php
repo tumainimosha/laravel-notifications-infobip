@@ -15,7 +15,6 @@ class CouldNotSendNotification extends BaseException
             'The notifiable did not have a receiving phone number. Add a routeNotificationForInfobip
             method or a phone_number attribute to your notifiable.'
         );
-
     }
 
     /**
@@ -30,5 +29,4 @@ class CouldNotSendNotification extends BaseException
             "Notification was not sent. Message object class `{$className}` is invalid. It should
             be `".InfobipMessage::class.'`');
     }
-
 }
