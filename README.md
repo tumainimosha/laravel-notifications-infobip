@@ -93,4 +93,3 @@ If you discover any security related issues, please email princeton.mosha@gmail.
 
 ## License
 The MIT License (MIT).
-json {"repository":{"url":"https://github.com/princeton255/laravel-notifications-infobip"}}
