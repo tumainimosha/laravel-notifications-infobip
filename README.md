@@ -85,7 +85,7 @@ If you discover any security related issues, please email princeton.mosha@gmail.
 
 ## Credits
 - Based on [Twilio SMS Notification channel](https://github.com/laravel-notification-channels/twilio) for Laravel
-- This project uses the [Infobip Client library](https://github.com/infobip/infobip-api-php-client)
+- This project uses the [Infobip Client library](https://github.com/infobip/infobip-api-php-client), and wraps it for smooth use in Laravel
 
 ## License
 The MIT License (MIT).
