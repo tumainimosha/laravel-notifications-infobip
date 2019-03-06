@@ -12,6 +12,10 @@ This package makes it easy to send Sms notifications using [Infobip service](htt
 	- [Setting up your Infobip account](#setting-up-your-infobip-account)
 - [Usage](#usage)
 	- [Available Message methods](#available-message-methods)
+- [Examples](#examples)
+	- [Dispatching the notification](#dispatching-the-notification)
+	- [Example Notification class](#example-notification-class)
+	- [Example Notifiable class](#example-notifiable-class)
 - [Testing](#testing)
 - [Security](#security)
 - [Credits](#credits)
@@ -77,11 +81,11 @@ public function routeNotificationForInfobip()
 - `from('')`: Accepts a phone to use as the notification sender.
 - `content('')`: Accepts a string value for the notification body.
 
-### Example Usage
+## Examples
 
-#### 1. Dispatching the notification
+### Dispatching the notification
 
-##### A. Using Laravel's notification facade
+#### A. Using Laravel's notification facade
 
 ```php
 use App\Notifications\ExampleInfobipNotification;
@@ -92,7 +96,7 @@ Notification::send($user, new ExampleInfobipNotification());
 // where $user implements `Illuminate\Notifications\Notifiable` trait
 ```
 
-##### B. Using the `notify()` method from `Notifiable` trait
+#### B. Using the `notify()` method from `Notifiable` trait
 
 ```php
 use App\Notifications\ExampleInfobipNotification;
@@ -100,7 +104,7 @@ use App\Notifications\ExampleInfobipNotification;
 $user->notify(new ExampleInfobipNotification($invoice));
 ```
 
-#### 2. Sample Notification class
+### Example Notification class
 
 ```php
 <?php
@@ -127,7 +131,7 @@ class ExampleInfobipNotification extends Notification
 }
 ```
 
-### 3. Sample Notifiable class
+### Example Notifiable class
 
 ```php
 <?php
