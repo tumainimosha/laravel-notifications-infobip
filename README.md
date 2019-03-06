@@ -77,6 +77,76 @@ public function routeNotificationForInfobip()
 - `from('')`: Accepts a phone to use as the notification sender.
 - `content('')`: Accepts a string value for the notification body.
 
+### Example Usage
+
+#### 1. Dispatching the notification
+
+##### A. Using Laravel's notification facade
+
+```php
+use App\Notifications\ExampleInfobipNotification;
+use Illuminate\Support\Facades\Notification;
+
+Notification::send($user, new ExampleInfobipNotification());
+
+// where $user implements `Illuminate\Notifications\Notifiable` trait
+```
+
+##### B. Using the `notify()` method from `Notifiable` trait
+
+```php
+use App\Notifications\ExampleInfobipNotification;
+
+$user->notify(new ExampleInfobipNotification($invoice));
+```
+
+#### 2. Sample Notification class
+
+```php
+<?php
+
+namespace App\Notifications;
+
+use Illuminate\Notifications\Notification;
+use NotificationChannels\Infobip\InfobipChannel;
+use NotificationChannels\Infobip\InfobipMessage;
+
+class ExampleInfobipNotification extends Notification
+{
+    public function via($notifiable)
+    {
+        return [InfobipChannel::class];
+    }
+
+    public function toInfobip($notifiable)
+    {
+        return (new InfobipMessage())
+            // Customize your msg content here
+            ->content("Your {$notifiable->service} account was approved!"); 
+    }
+}
+```
+
+### 3. Sample Notifiable class
+
+```php
+<?php
+
+namespace App\Models;
+
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+
+class User extends Authenticatable
+{
+    use Notifiable;
+}
+```
+
+
+For more details you can check out [this link](https://laravel.com/docs/5.7/notifications#sending-notifications) on Laravel documentation
+
+
 ## Testing
 
 ``` bash
