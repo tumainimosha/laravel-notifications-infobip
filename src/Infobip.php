@@ -14,7 +14,8 @@ class Infobip
     {
         $auth = new AuthConfig(
             config('services.infobip.username'),
-            config('services.infobip.password')
+            config('services.infobip.password'),
+            config('services.infobip.baseUrl')
         );
 
         $this->client = new Sms($auth);
