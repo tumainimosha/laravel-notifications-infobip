@@ -42,6 +42,17 @@ Add your Infobip Account Username, Password, and From Number to your `config/ser
 ...
 ```
 
+To change `Base URL` to personal use this ([See more](https://dev.infobip.com/getting-started/base-url))
+
+```php
+...
+'infobip' => [
+    ...
+    'baseUrl' => env('INFOBIP_BASE_URL', null),
+],
+...
+```
+
 ## Usage
 Now you can use the channel in your `via()` method inside the notification:
 
